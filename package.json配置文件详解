@@ -1,0 +1,29 @@
+1.scripts字段
+
+scripts指定了运行脚本命令的npm命令行缩写，比如start指定了运行npm run start时，所要执行的命令。
+
+下面的设置指定了npm run preinstall、npm run postinstall、npm run start、npm run test时，所要执行的命令。
+
+"scripts": {
+    "preinstall": "echo here it comes!",
+    "postinstall": "echo there it goes!",
+    "start": "node index.js",
+    "test": "tap test/*.js"
+}
+
+这里面属性名可以为任意字符串，如"abc",如下：
+
+"scripts": {
+	"abc": "node index.js"
+}
+
+运行命令 npm run abc  就会去执行node index.js
+
+其中run 可以省略，即npm abc 也可得到一样的结果
+
+开发中常用的属性名: dev build
+
+"scripts": {
+	"dev": "webpack-dev-server --progress --color", //启动一个服务
+	"build": ""
+}
